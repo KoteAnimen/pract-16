@@ -18,6 +18,8 @@ namespace pract_16
         public int meteorMoveSpeed = 0;
         public List<PictureBox> asteroids = new List<PictureBox>();
         public Random rnd = new Random();
+        public int currentFrame = 0;
+
         public Form1()
         {
             InitializeComponent();            
@@ -36,7 +38,8 @@ namespace pract_16
             }
             rocket.Parent = Background;
             rocket.BackColor = Color.Transparent;
-            
+            explosion.Parent = Background;
+            explosion.BackColor = Color.Transparent;           
         }
 
         private void Rocket_KeyUp(object sender, KeyEventArgs e)
@@ -86,6 +89,16 @@ namespace pract_16
         {
             MainMenu menu = new MainMenu();
             menu.ShowDialog(this);
+        }
+        public void ExplosionAnimation()
+        {
+            Bitmap part = new Bitmap(explosion.Width, explosion.Height);            
+            Graphics g = Graphics.FromImage(part);
+            if(explosion.Visible == true)
+            {
+                g.FillRectangle(new SolidBrush(Color.White), 0, 0, explosion.Width, explosion.Height);
+
+            }
         }
     }
 }

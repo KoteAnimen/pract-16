@@ -40,6 +40,7 @@
             this.ast6 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ast7 = new System.Windows.Forms.PictureBox();
+            this.explosion = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rocket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast1)).BeginInit();
@@ -49,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ast4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.explosion)).BeginInit();
             this.SuspendLayout();
             // 
             // Background
@@ -148,11 +150,22 @@
             this.ast7.TabIndex = 9;
             this.ast7.TabStop = false;
             // 
+            // explosion
+            // 
+            this.explosion.Image = global::pract_16.Properties.Resources._48_482933_explosion_sprite_png_2d_explosion_sprite_sheet;
+            this.explosion.Location = new System.Drawing.Point(381, 255);
+            this.explosion.Name = "explosion";
+            this.explosion.Size = new System.Drawing.Size(100, 90);
+            this.explosion.TabIndex = 10;
+            this.explosion.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 643);
+            this.ControlBox = false;
+            this.Controls.Add(this.explosion);
             this.Controls.Add(this.ast7);
             this.Controls.Add(this.ast6);
             this.Controls.Add(this.ast4);
@@ -180,6 +193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ast4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.explosion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -196,6 +210,7 @@
         private System.Windows.Forms.PictureBox ast6;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox ast7;
+        private System.Windows.Forms.PictureBox explosion;
     }
 }
 
