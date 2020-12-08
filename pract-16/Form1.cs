@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace pract_16
 {
+
+    
     
 
     public partial class Form1 : Form
     {
         public int rocketMoveSpeed = 0;
-        public int meteorMoveSpeed = 0;
+        public int meteorMoveSpeed = 5;
         public List<PictureBox> asteroids = new List<PictureBox>();
         public Random rnd = new Random();
         public int currentFrame = 0;
@@ -34,12 +36,17 @@ namespace pract_16
             {
                 asteroids[i].Parent = Background;
                 asteroids[i].BackColor = Color.Transparent;
-                asteroids[i].Visible = false;
+                asteroids[i].Location = new Point(asteroids[i].Location.X, rnd.Next(-500, 0));
             }
             rocket.Parent = Background;
             rocket.BackColor = Color.Transparent;
             explosion.Parent = Background;
             explosion.BackColor = Color.Transparent;           
+        }
+
+        PictureBox Clone(string image)
+        {
+            return new PictureBox();
         }
 
         private void Rocket_KeyUp(object sender, KeyEventArgs e)
@@ -67,14 +74,14 @@ namespace pract_16
         {
             rocket.Left += rocketMoveSpeed;
             for(int i = 0; i < asteroids.Count; i++)
-            {
-                asteroids[i].Top += meteorMoveSpeed;
+            {                
+                asteroids[i].Top += meteorMoveSpeed;                
             }
             for (int i = 0; i < asteroids.Count; i++)
             {
                if(asteroids[i].Location.Y > 580)
                {
-                    asteroids[i].Location = new Point(rnd.Next(0, 810), 0);
+                    asteroids[i].Location = new Point(rnd.Next(0, 810), rnd.Next(-500, 0));
                                        
                }  
             }
@@ -100,5 +107,6 @@ namespace pract_16
 
             }
         }
+        
     }
 }
