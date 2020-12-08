@@ -39,6 +39,7 @@
             this.ast4 = new System.Windows.Forms.PictureBox();
             this.ast6 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ast7 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rocket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast1)).BeginInit();
@@ -47,6 +48,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ast5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ast7)).BeginInit();
             this.SuspendLayout();
             // 
             // Background
@@ -73,7 +75,7 @@
             // ast1
             // 
             this.ast1.Image = ((System.Drawing.Image)(resources.GetObject("ast1.Image")));
-            this.ast1.Location = new System.Drawing.Point(246, 132);
+            this.ast1.Location = new System.Drawing.Point(271, 12);
             this.ast1.Name = "ast1";
             this.ast1.Size = new System.Drawing.Size(79, 73);
             this.ast1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -83,7 +85,7 @@
             // ast2
             // 
             this.ast2.Image = ((System.Drawing.Image)(resources.GetObject("ast2.Image")));
-            this.ast2.Location = new System.Drawing.Point(401, 64);
+            this.ast2.Location = new System.Drawing.Point(388, 12);
             this.ast2.Name = "ast2";
             this.ast2.Size = new System.Drawing.Size(79, 74);
             this.ast2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,7 +95,7 @@
             // ast3
             // 
             this.ast3.Image = ((System.Drawing.Image)(resources.GetObject("ast3.Image")));
-            this.ast3.Location = new System.Drawing.Point(550, 141);
+            this.ast3.Location = new System.Drawing.Point(508, 12);
             this.ast3.Name = "ast3";
             this.ast3.Size = new System.Drawing.Size(79, 74);
             this.ast3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -103,7 +105,7 @@
             // ast5
             // 
             this.ast5.Image = ((System.Drawing.Image)(resources.GetObject("ast5.Image")));
-            this.ast5.Location = new System.Drawing.Point(405, 284);
+            this.ast5.Location = new System.Drawing.Point(50, 13);
             this.ast5.Name = "ast5";
             this.ast5.Size = new System.Drawing.Size(79, 74);
             this.ast5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,7 +115,7 @@
             // ast4
             // 
             this.ast4.Image = ((System.Drawing.Image)(resources.GetObject("ast4.Image")));
-            this.ast4.Location = new System.Drawing.Point(230, 323);
+            this.ast4.Location = new System.Drawing.Point(164, 13);
             this.ast4.Name = "ast4";
             this.ast4.Size = new System.Drawing.Size(79, 73);
             this.ast4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -123,7 +125,7 @@
             // ast6
             // 
             this.ast6.Image = ((System.Drawing.Image)(resources.GetObject("ast6.Image")));
-            this.ast6.Location = new System.Drawing.Point(685, 301);
+            this.ast6.Location = new System.Drawing.Point(616, 11);
             this.ast6.Name = "ast6";
             this.ast6.Size = new System.Drawing.Size(79, 74);
             this.ast6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -136,11 +138,22 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.ObjectsMove);
             // 
+            // ast7
+            // 
+            this.ast7.Image = ((System.Drawing.Image)(resources.GetObject("ast7.Image")));
+            this.ast7.Location = new System.Drawing.Point(733, 11);
+            this.ast7.Name = "ast7";
+            this.ast7.Size = new System.Drawing.Size(79, 74);
+            this.ast7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ast7.TabIndex = 9;
+            this.ast7.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 643);
+            this.Controls.Add(this.ast7);
             this.Controls.Add(this.ast6);
             this.Controls.Add(this.ast4);
             this.Controls.Add(this.ast5);
@@ -155,6 +168,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rocket";
+            this.Load += new System.EventHandler(this.LoadMainMenu);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Rocket_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Rocket_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();
@@ -165,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ast5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ast7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,6 +195,7 @@
         private System.Windows.Forms.PictureBox ast4;
         private System.Windows.Forms.PictureBox ast6;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox ast7;
     }
 }
 
