@@ -9,15 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace pract_16
-{
-
-    
-    
+{ 
 
     public partial class Form1 : Form
     {
         public int rocketMoveSpeed = 0;
-        public int meteorMoveSpeed = 5;
+        public int meteorMoveSpeed = 0;
         public List<PictureBox> asteroids = new List<PictureBox>();
         public Random rnd = new Random();
         public int currentFrame = 0;
@@ -42,21 +39,17 @@ namespace pract_16
             rocket.BackColor = Color.Transparent;
             explosion.Parent = Background;
             explosion.BackColor = Color.Transparent;           
-        }
-
-        PictureBox Clone(string image)
-        {
-            return new PictureBox();
-        }
-
+        }        
+        
         private void Rocket_KeyUp(object sender, KeyEventArgs e)
         {
-            rocketMoveSpeed = 0;
+            rocketMoveSpeed = 0;            
         }
 
         private void Rocket_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Left)
+            meteorMoveSpeed = 5;
+            if (e.KeyData == Keys.Left)
             {
                 rocketMoveSpeed = -10;
             }
@@ -81,11 +74,9 @@ namespace pract_16
             {
                if(asteroids[i].Location.Y > 580)
                {
-                    asteroids[i].Location = new Point(rnd.Next(0, 810), rnd.Next(-500, 0));
-                                       
+                    asteroids[i].Location = new Point(rnd.Next(0, 810), rnd.Next(-500, 0));                                       
                }  
             }
-
         }
 
         private void LoadMainMenu(object sender, EventArgs e)
@@ -94,6 +85,7 @@ namespace pract_16
         }
         public void MainMenu()
         {
+            meteorMoveSpeed = 0;
             MainMenu menu = new MainMenu();
             menu.ShowDialog(this);
         }
