@@ -14,10 +14,9 @@ namespace pract_16
     public partial class Form1 : Form
     {
         public int rocketMoveSpeed = 0;
-        public int meteorMoveSpeed = 0;
+        public int meteorMoveSpeed = 0;        
         public List<PictureBox> asteroids = new List<PictureBox>();
-        public Random rnd = new Random();
-        public int currentFrame = 0;
+        public Random rnd = new Random();        
 
         public Form1()
         {
@@ -91,13 +90,8 @@ namespace pract_16
         }
         public void ExplosionAnimation()
         {
-            Bitmap part = new Bitmap(explosion.Width, explosion.Height);            
-            Graphics g = Graphics.FromImage(part);
-            if(explosion.Visible == true)
-            {
-                g.FillRectangle(new SolidBrush(Color.White), 0, 0, explosion.Width, explosion.Height);
-
-            }
+            
+            
         }
         
     }
