@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Нужно написать функцию Start для старта и рестарта игры
+//Нужно написать событие, что при окончании анимации смерти игрока появлялась форма с рестартом игры
+//Нужно написать функцию для подсчета времени выживания и отображения его на экране
+//Нужно написать функцию для записи рекордного времени и отображения его на экране
+
 namespace pract_16
 { 
 
@@ -16,7 +21,9 @@ namespace pract_16
         public int rocketMoveSpeed = 0;
         public int meteorMoveSpeed = 0;        
         public List<PictureBox> asteroids = new List<PictureBox>();
-        public Random rnd = new Random();        
+        public Random rnd = new Random();
+        public Rectangle[] collisions = new Rectangle[7];
+        public Rectangle playerCollision;
 
         public Form1()
         {
@@ -67,7 +74,18 @@ namespace pract_16
         {
             
             rocket.Left += rocketMoveSpeed;
-            for(int i = 0; i < asteroids.Count; i++)
+            if(rocket.Location.X < 0)
+            {
+                rocket.Location = new Point(810, rocket.Location.Y);
+            }
+            if (rocket.Location.X > 810)
+            {
+                rocket.Location = new Point(0, rocket.Location.Y);
+            }
+
+            playerCollision = rocket.DisplayRectangle;
+            playerCollision.Location = rocket.Location;
+            for (int i = 0; i < asteroids.Count; i++)
             {                
                 asteroids[i].Top += meteorMoveSpeed;                
             }
@@ -77,6 +95,16 @@ namespace pract_16
                {
                     asteroids[i].Location = new Point(rnd.Next(0, 810), rnd.Next(-500, 0));                                       
                }  
+            }
+            for(int i = 0; i < collisions.Length; i++)
+            {
+                collisions[i] = asteroids[i].DisplayRectangle;
+                collisions[i].Location = asteroids[i].Location;
+                if(playerCollision.IntersectsWith(collisions[i]) == true)
+                {
+                    timer1.Enabled = false;
+                    DeadPlayer();
+                }
             }
         }
 
@@ -99,8 +127,7 @@ namespace pract_16
             else
             {
                 explosion.Image = null;
-            }
-                       
+            }                       
         }
         public void DeadPlayer()
         {
