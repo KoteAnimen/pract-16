@@ -37,7 +37,8 @@ namespace pract_16
             rocket.Parent = Background;
             rocket.BackColor = Color.Transparent;
             explosion.Parent = Background;
-            explosion.BackColor = Color.Transparent;           
+            explosion.BackColor = Color.Transparent;
+            ExplosionAnimation(false);
         }        
         
         private void Rocket_KeyUp(object sender, KeyEventArgs e)
@@ -64,6 +65,7 @@ namespace pract_16
 
         private void ObjectsMove(object sender, EventArgs e)
         {
+            
             rocket.Left += rocketMoveSpeed;
             for(int i = 0; i < asteroids.Count; i++)
             {                
@@ -88,10 +90,23 @@ namespace pract_16
             MainMenu menu = new MainMenu();
             menu.ShowDialog(this);
         }
-        public void ExplosionAnimation()
+        public void ExplosionAnimation(bool start)
         {
-            
-            
+            if (start)
+            {
+                explosion.Image = Image.FromFile("./Resources/explosing.gif");
+            }
+            else
+            {
+                explosion.Image = null;
+            }
+                       
+        }
+        public void DeadPlayer()
+        {
+            rocket.Visible = false;
+            explosion.Location = new Point(rocket.Location.X, rocket.Location.Y);
+            ExplosionAnimation(true);
         }
         
     }

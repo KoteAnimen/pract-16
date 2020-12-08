@@ -95,6 +95,7 @@
             this.explosion.Location = new System.Drawing.Point(381, 255);
             this.explosion.Name = "explosion";
             this.explosion.Size = new System.Drawing.Size(100, 90);
+            this.explosion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.explosion.TabIndex = 10;
             this.explosion.TabStop = false;
             // 
