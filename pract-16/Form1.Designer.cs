@@ -41,6 +41,7 @@
             this.ast3 = new System.Windows.Forms.PictureBox();
             this.ast6 = new System.Windows.Forms.PictureBox();
             this.ast7 = new System.Windows.Forms.PictureBox();
+            this.distance = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rocket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast5)).BeginInit();
@@ -159,12 +160,22 @@
             this.ast7.TabIndex = 9;
             this.ast7.TabStop = false;
             // 
+            // distance
+            // 
+            this.distance.AutoSize = true;
+            this.distance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.distance.Location = new System.Drawing.Point(12, 11);
+            this.distance.Name = "distance";
+            this.distance.Size = new System.Drawing.Size(0, 31);
+            this.distance.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 643);
             this.ControlBox = false;
+            this.Controls.Add(this.distance);
             this.Controls.Add(this.explosion);
             this.Controls.Add(this.ast7);
             this.Controls.Add(this.ast6);
@@ -195,6 +206,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ast6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ast7)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -211,6 +223,7 @@
         private System.Windows.Forms.PictureBox ast3;
         private System.Windows.Forms.PictureBox ast6;
         private System.Windows.Forms.PictureBox ast7;
+        private System.Windows.Forms.Label distance;
     }
 }
 

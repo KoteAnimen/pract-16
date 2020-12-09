@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
-//Нужно написать функцию Start для старта и рестарта игры
-//Нужно написать событие, что при окончании анимации смерти игрока появлялась форма с рестартом игры
-//Нужно написать функцию для подсчета времени выживания и отображения его на экране
-//Нужно написать функцию для записи рекордного времени и отображения его на экране
+
+//Нужно написать функцию для подсчета расстояния выживания и отображения его на экране
+//Нужно написать функцию для записи рекордного расстояния и отображения его на экране
 
 namespace pract_16
 { 
@@ -24,6 +24,8 @@ namespace pract_16
         public Random rnd = new Random();
         public Rectangle[] collisions = new Rectangle[7];
         public Rectangle playerCollision;
+        public float currentDistance;
+        public float recordDistance;
 
         public Form1()
         {
@@ -64,7 +66,12 @@ namespace pract_16
         {
             
             rocket.Left += rocketMoveSpeed;
-            if(rocket.Location.X < 0)
+            if(meteorMoveSpeed > 0)
+            {
+                currentDistance += 0.1f;
+                distance.Text = "Пройдено километров - " + currentDistance.ToString();
+            }            
+            if (rocket.Location.X < 0)
             {
                 rocket.Location = new Point(810, rocket.Location.Y);
             }
@@ -81,10 +88,11 @@ namespace pract_16
             }
             for (int i = 0; i < asteroids.Count; i++)
             {
-               if(asteroids[i].Location.Y > 580)
+               if(asteroids[i].Location.Y > 700)
                {
-                    asteroids[i].Location = new Point(rnd.Next(0, 810), rnd.Next(-500, 0));                                       
-               }  
+                    asteroids[i].Location = new Point(rnd.Next(0, 810), rnd.Next(-500, 0));
+                    asteroids[i].Size = new Size(rnd.Next(70, 100), rnd.Next(70, 100));
+                }  
             }
             for(int i = 0; i < collisions.Length; i++)
             {
@@ -135,22 +143,24 @@ namespace pract_16
                 asteroids[i].Parent = Background;
                 asteroids[i].BackColor = Color.Transparent;
                 asteroids[i].Location = new Point(asteroids[i].Location.X, rnd.Next(-500, 0));
+                asteroids[i].Size = new Size(rnd.Next(70, 100), rnd.Next(70, 100));
             }
             meteorMoveSpeed = 0;
             rocketMoveSpeed = 0;
             rocket.Parent = Background;
             rocket.BackColor = Color.Transparent;
             explosion.Parent = Background;
-            explosion.BackColor = Color.Transparent;
+            explosion.BackColor = Color.Transparent;            
             ExplosionAnimation(false);
-            
+            currentDistance = 0;
+            distance.Text = "Пройдено километров - " + currentDistance.ToString();
             timer1.Enabled = true;
         }
 
         public void RestartGame()
         {
             Restart restart = new Restart();
-            restart.ShowDialog(this);
+            restart.ShowDialog(this);            
             StartGame();
         }
         
