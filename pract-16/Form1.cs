@@ -69,6 +69,7 @@ namespace pract_16
             if(meteorMoveSpeed > 0)
             {
                 currentDistance += 0.1;
+                currentDistance = Math.Round(currentDistance, 2);
                 distance.Text = "Пройдено километров - " + currentDistance.ToString();
                 record.Text = "Текущий рекорд - " + recordDistance.ToString();
                 if(currentDistance >= recordDistance)
@@ -146,10 +147,12 @@ namespace pract_16
             {
                 StreamReader readRecord = new StreamReader("record.xml");
                 recordDistance = Convert.ToDouble(readRecord.ReadLine());
+                record.Text = "Текущий рекорд - " + recordDistance.ToString();
             }
             catch
             {
                 recordDistance = 0;
+                record.Text = "Текущий рекорд - " + recordDistance.ToString();
             }
             
             rocket.Visible = true;
