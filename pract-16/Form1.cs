@@ -34,18 +34,8 @@ namespace pract_16
             asteroids.Add(ast4);            
             asteroids.Add(ast5);            
             asteroids.Add(ast6);
-            asteroids.Add(ast7);
-            for (int i = 0; i < asteroids.Count; i++)
-            {
-                asteroids[i].Parent = Background;
-                asteroids[i].BackColor = Color.Transparent;
-                asteroids[i].Location = new Point(asteroids[i].Location.X, rnd.Next(-500, 0));
-            }
-            rocket.Parent = Background;
-            rocket.BackColor = Color.Transparent;
-            explosion.Parent = Background;
-            explosion.BackColor = Color.Transparent;
-            ExplosionAnimation(false);
+            asteroids.Add(ast7);            
+            StartGame();
         }        
         
         private void Rocket_KeyUp(object sender, KeyEventArgs e)
@@ -127,13 +117,41 @@ namespace pract_16
             else
             {
                 explosion.Image = null;
-            }                       
+            }
         }
         public void DeadPlayer()
         {
             rocket.Visible = false;
             explosion.Location = new Point(rocket.Location.X, rocket.Location.Y);
             ExplosionAnimation(true);
+            RestartGame();
+        }
+
+        public void StartGame()
+        {
+            rocket.Visible = true;
+            for (int i = 0; i < asteroids.Count; i++)
+            {
+                asteroids[i].Parent = Background;
+                asteroids[i].BackColor = Color.Transparent;
+                asteroids[i].Location = new Point(asteroids[i].Location.X, rnd.Next(-500, 0));
+            }
+            meteorMoveSpeed = 0;
+            rocketMoveSpeed = 0;
+            rocket.Parent = Background;
+            rocket.BackColor = Color.Transparent;
+            explosion.Parent = Background;
+            explosion.BackColor = Color.Transparent;
+            ExplosionAnimation(false);
+            
+            timer1.Enabled = true;
+        }
+
+        public void RestartGame()
+        {
+            Restart restart = new Restart();
+            restart.ShowDialog(this);
+            StartGame();
         }
         
     }
