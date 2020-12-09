@@ -24,8 +24,8 @@ namespace pract_16
         public Random rnd = new Random();
         public Rectangle[] collisions = new Rectangle[7];
         public Rectangle playerCollision;
-        public float currentDistance;
-        public float recordDistance;
+        public double currentDistance;
+        public double recordDistance;
 
         public Form1()
         {
@@ -68,8 +68,13 @@ namespace pract_16
             rocket.Left += rocketMoveSpeed;
             if(meteorMoveSpeed > 0)
             {
-                currentDistance += 0.1f;
+                currentDistance += 0.1;
                 distance.Text = "Пройдено километров - " + currentDistance.ToString();
+                record.Text = "Текущий рекорд - " + recordDistance.ToString();
+                if(currentDistance >= recordDistance)
+                {
+                    recordDistance = currentDistance;
+                }
             }            
             if (rocket.Location.X < 0)
             {
@@ -137,6 +142,16 @@ namespace pract_16
 
         public void StartGame()
         {
+            try
+            {
+                StreamReader readRecord = new StreamReader("record.xml");
+                recordDistance = Convert.ToDouble(readRecord.ReadLine());
+            }
+            catch
+            {
+                recordDistance = 0;
+            }
+            
             rocket.Visible = true;
             for (int i = 0; i < asteroids.Count; i++)
             {
@@ -159,6 +174,9 @@ namespace pract_16
 
         public void RestartGame()
         {
+            StreamWriter saveRecord = new StreamWriter("record.xml");
+            saveRecord.WriteLine(recordDistance.ToString());
+            saveRecord.Close();
             Restart restart = new Restart();
             restart.ShowDialog(this);            
             StartGame();
