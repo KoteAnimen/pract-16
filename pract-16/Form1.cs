@@ -125,11 +125,11 @@ namespace pract_16
         {
             if (start)
             {
-                explosion.Image = Image.FromFile("./Resources/explosing.gif");
+                explosion.Visible = true;
             }
             else
             {
-                explosion.Image = null;
+                explosion.Visible = false;
             }
         }
         public void DeadPlayer()

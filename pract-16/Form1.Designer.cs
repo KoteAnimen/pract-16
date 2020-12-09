@@ -94,6 +94,7 @@
             // 
             // explosion
             // 
+            this.explosion.Image = ((System.Drawing.Image)(resources.GetObject("explosion.Image")));
             this.explosion.Location = new System.Drawing.Point(381, 255);
             this.explosion.Name = "explosion";
             this.explosion.Size = new System.Drawing.Size(100, 90);
