@@ -39,18 +39,21 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -3);
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(253, 63);
+            this.pictureBox1.Size = new System.Drawing.Size(464, 116);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // StartGame
             // 
-            this.StartGame.Location = new System.Drawing.Point(51, 66);
+            this.StartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StartGame.Location = new System.Drawing.Point(94, 122);
+            this.StartGame.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.StartGame.Name = "StartGame";
-            this.StartGame.Size = new System.Drawing.Size(149, 34);
+            this.StartGame.Size = new System.Drawing.Size(273, 63);
             this.StartGame.TabIndex = 1;
             this.StartGame.Text = "Начать игру";
             this.StartGame.UseVisualStyleBackColor = true;
@@ -58,9 +61,11 @@
             // 
             // AboutUs
             // 
-            this.AboutUs.Location = new System.Drawing.Point(50, 106);
+            this.AboutUs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AboutUs.Location = new System.Drawing.Point(92, 196);
+            this.AboutUs.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.AboutUs.Name = "AboutUs";
-            this.AboutUs.Size = new System.Drawing.Size(149, 34);
+            this.AboutUs.Size = new System.Drawing.Size(273, 63);
             this.AboutUs.TabIndex = 2;
             this.AboutUs.Text = "О игре";
             this.AboutUs.UseVisualStyleBackColor = true;
@@ -68,9 +73,11 @@
             // 
             // ExitGame
             // 
-            this.ExitGame.Location = new System.Drawing.Point(50, 146);
+            this.ExitGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ExitGame.Location = new System.Drawing.Point(92, 270);
+            this.ExitGame.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ExitGame.Name = "ExitGame";
-            this.ExitGame.Size = new System.Drawing.Size(149, 34);
+            this.ExitGame.Size = new System.Drawing.Size(273, 63);
             this.ExitGame.TabIndex = 3;
             this.ExitGame.Text = "Выход";
             this.ExitGame.UseVisualStyleBackColor = true;
@@ -78,15 +85,17 @@
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 192);
+            this.ClientSize = new System.Drawing.Size(453, 347);
             this.ControlBox = false;
             this.Controls.Add(this.ExitGame);
             this.Controls.Add(this.AboutUs);
             this.Controls.Add(this.StartGame);
             this.Controls.Add(this.pictureBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainMenu";

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Media;
 
 
 //Нужно написать функцию для подсчета расстояния выживания и отображения его на экране
@@ -136,8 +137,10 @@ namespace pract_16
         public void DeadPlayer()
         {
             rocket.Visible = false;
+            SoundPlayer soundExplosion = new SoundPlayer("explosion.wav");
+            soundExplosion.Play();
             explosion.Location = new Point(rocket.Location.X, rocket.Location.Y);
-            ExplosionAnimation(true);
+            ExplosionAnimation(true);            
             RestartGame();
         }
 
