@@ -143,8 +143,8 @@ namespace pract_16
         //функция сперти персонажа
         public void DeadPlayer()
         {
-            rocket.Visible = false;
-            SoundPlayer soundExplosion = new SoundPlayer("explosion.wav");
+            rocket.Visible = false;            
+            SoundPlayer soundExplosion = new SoundPlayer(Properties.Resources.explosion);
             soundExplosion.Play();
             explosion.Location = new Point(rocket.Location.X, rocket.Location.Y);
             ExplosionAnimation(true);            
